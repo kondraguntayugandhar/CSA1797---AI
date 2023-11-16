@@ -1,0 +1,16 @@
+/* Define rules for animal classification */
+
+/* Rule 1: Birds lay eggs */
+lays_eggs(bird).
+
+/* Rule 2: Mammals give birth to live young */
+gives_birth_to_live_young(mammal).
+
+/* Rule 3: Birds are warm-blooded */
+warm_blooded(X) :- lays_eggs(X).
+
+/* Rule 4: Mammals are warm-blooded */
+warm_blooded(X) :- gives_birth_to_live_young(X).
+
+/* Query to check if an animal is warm-blooded */
+is_warm_blooded(Animal) :- warm_blooded(Animal).
